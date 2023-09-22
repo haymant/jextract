@@ -26,7 +26,11 @@ supports JDK 18. Please checkout the [Gradle compatibility matrix](https://docs.
 ```sh
 $ sh ./gradlew -Pjdk21_home=<jdk21_home_dir> -Pllvm_home=<libclang_dir> clean verify
 ```
-
+For Ubuntu, extra steps is required
+```sh
+$ mkdir  build/jextract_jmod_libs # then run gradlew withouit clean
+$ export LD_LIBRARY_PATH=/usr/lib/llvm-15/lib/ #assume llvm 15 is used
+```
 
 > <details><summary><strong>Using a local installation of LLVM</strong></summary>
 > 
